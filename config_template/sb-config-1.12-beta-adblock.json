@@ -392,6 +392,10 @@
       "interval": "10m",
       "tolerance": 50
     },
+     {
+      "type": "block",
+      "tag": "adblock"
+    },
     {
       "type": "direct",
       "tag": "direct"
@@ -517,10 +521,21 @@
         "outbound": "Global"
       },
       {
+        "rule_set": "adblock",
+        "outbound": "adblock"
+      },
+      {
         "rule_set": ["geoip-cn", "geosite-cn"],
         "outbound": "China"
       }
     ],
+    "outbounds": 
+  [
+    {
+      "type": "block",
+      "tag": "adblock"                          // 配合远程 "rule_set" 进行域名拦截
+    }
+  ],
     "rule_set": [
       {
         "tag": "geosite-category-ads-all",
